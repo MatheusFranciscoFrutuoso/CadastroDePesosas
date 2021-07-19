@@ -11,16 +11,22 @@ namespace CadastroPessoas.Modelos
         public string Rg { get; set; }
         public string Cpf { get; set; }
 
-        public PessoaFisica(string nome, DateTime dataNasc, string Rg, string cpf)
+        public PessoaFisica(string nome, DateTime dataNasc, string Rg, string cpf, Endereco endereco)
         {
             this.Nome = nome;
             this.DataNascimento = dataNasc;
             this.Rg = Rg;
             this.Cpf = cpf;
+            this.Endereco = endereco;
+        }
+        public PessoaFisica()
+        {
+
         }
         public override string ToString()
         {
-            return $"Nome: {Nome}\t| Data de Nascimento: {DataNascimento}\t| RG: {Rg}\t| CPF: {Cpf}";
+            return $"\n\tNome: {Nome}\n\tData de Nascimento: {DataNascimento.ToString("MM/dd/yyyy")}\n\tRG: {Rg}\n\tCPF: {Cpf}\n\tEndereço: {Endereco}";
         }
     }
 }
+

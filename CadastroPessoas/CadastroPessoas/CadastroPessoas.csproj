@@ -43,6 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Operacoes.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Modelos\Endereco.cs" />
+    <Compile Include="Modelos\Pessoa.cs" />
+    <Compile Include="Modelos\PessoaFisica.cs" />
+    <Compile Include="Modelos\PessoaJuridica.cs" />
+    <Compile Include="Modelos\Validacao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -14,7 +14,7 @@ namespace CadastroPessoas.Modelos
         public string Bairro { get; set; }
         public string Cidade { get; set; }
 
-        public Endereco(string rua, int numero, string complemento, string bairro, string cidade)
+        public Endereco(string cidade, string bairro, string rua, int numero, string complemento = "")
         {
             this.Rua = rua;
             this.Numero = numero;
@@ -22,9 +22,9 @@ namespace CadastroPessoas.Modelos
             this.Bairro = bairro;
             this.Cidade = cidade;
         }
-        public Endereco(string bairro)
+        public override string ToString()
         {
-
+            return $"{Cidade}, {Bairro}, {Rua}, {Numero}, {Complemento}";
         }
     }
 }

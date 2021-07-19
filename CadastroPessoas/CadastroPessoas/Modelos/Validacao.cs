@@ -127,7 +127,6 @@ namespace CadastroPessoas.Modelos
             do {
                 try
                 {
-
                     dado = Console.ReadLine();
                     data = dado.Split('/');
                     for (int i = 0; i < 3; i++)
@@ -178,7 +177,6 @@ namespace CadastroPessoas.Modelos
                 for (int i = 0; i < enderecoSeparado.Length; i++)
                 {
                     enderecoFinal[i] = enderecoSeparado[i];
-
                 }
                 try
                 {
@@ -188,7 +186,7 @@ namespace CadastroPessoas.Modelos
                     }
 
                     for (int i = 0; i < enderecoFinal.Length-1; i++)
-                {
+                    {
                         if (!string.IsNullOrEmpty(enderecoFinal[i]))
                         {
                             enderecoFinal[i] = enderecoFinal[i].Trim();
@@ -199,7 +197,7 @@ namespace CadastroPessoas.Modelos
                             throw new Exception();
                         }
                             
-                }
+                    }
                     return enderecoFinal;
 
                 }

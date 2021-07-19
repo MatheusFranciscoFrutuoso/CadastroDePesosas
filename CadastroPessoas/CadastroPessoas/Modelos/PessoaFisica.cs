@@ -18,9 +18,9 @@ namespace CadastroPessoas.Modelos
             this.Rg = Rg;
             this.Cpf = cpf;
         }
-        public PessoaFisica(string nome)
+        public override string ToString()
         {
-            this.Nome = nome;
+            return $"Nome: {Nome}\t| Data de Nascimento: {DataNascimento}\t| RG: {Rg}\t| CPF: {Cpf}";
         }
     }
 }

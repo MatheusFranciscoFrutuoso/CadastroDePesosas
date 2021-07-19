@@ -11,9 +11,9 @@ namespace CadastroPessoas
     {
         List<object> ListaPessoas = new List<object>();
 
-
         public void Cadastrar(bool fisica)
         {
+            bool igual = true; 
             Console.WriteLine("Insira o nome: ");
             string nome = Validacao.ValidaString();
             Console.WriteLine("Insira a data de nascimento/fundação(DD/MM/YYYY):");
@@ -22,31 +22,41 @@ namespace CadastroPessoas
             Console.WriteLine("Digite um endereço válido(Cidade*, Bairro*, Rua*, Número*, Complemento):");
             string[] vetorEndereco = new string[5];
             vetorEndereco = Validacao.ValidaEndereco();
-            //Console.WriteLine("Insira a cidade: ");
-            //string cidade = Validacao.ValidaString();
-            //Console.WriteLine("Insira a bairro: ");
-            //string bairro = Validacao.ValidaString();
-            //Console.WriteLine("Insira a rua: ");
-            //string rua = Validacao.ValidaString();
-            //Console.WriteLine("Insira a numero: ");
-            //int numero = Validacao.ValidaInteiro();
-            //Console.WriteLine("Insira a complemento: ");
-            //string complemento = Validacao.ValidaString();
             Endereco endereco = new Endereco(vetorEndereco[0], vetorEndereco[1], vetorEndereco[2], Convert.ToInt32(vetorEndereco[3].Trim()), vetorEndereco[4]);
             if (fisica)
             {
+
                 Console.WriteLine("Insira o RG: ");
                 string rg = Validacao.ValidaString();
-                Console.WriteLine("Insira o CPF: ");
-                string cpf = Validacao.ValidaString();
+                string cpf = string.Empty;
+                    Console.WriteLine("Insira o CPF: ");
+                do
+                {
+                    cpf = Validacao.ValidaString();
+                    igual = Compara(cpf, true);
+                    if (igual)
+                    {
+                        Console.Write("Digite um CPF Válido:");
+                    }
+                } while (igual);
                 ListaPessoas.Add(new PessoaFisica(nome, data, rg, cpf, endereco));
             }
             else
             {
+                string cnpj = string.Empty;
                 Console.WriteLine("Insira o IE: ");
                 string ie = Validacao.ValidaString();
-                Console.WriteLine("Insira o CNPJ: ");
-                string cnpj = Validacao.ValidaString();
+                    Console.WriteLine("Insira o CNPJ: ");
+                do
+                {
+                    cnpj = Validacao.ValidaString();
+                    igual = Compara(cnpj, false);
+                    if (igual)
+                    {
+                        Console.Write("Digite um CNPJ Válido:");
+                    }
+
+                } while (igual);
                 ListaPessoas.Add(new PessoaJuridica(nome, data, ie, cnpj, endereco));
             }
         }
@@ -76,6 +86,40 @@ namespace CadastroPessoas
                 }
             }
 
+        }
+        public bool Compara(string dado, bool fisica)
+        {
+            bool igual = false;
+            if (fisica)
+            {
+                foreach (object item in ListaPessoas)
+                {
+                    if (item.GetType() == typeof(PessoaFisica))
+                    {
+                    PessoaFisica f = (PessoaFisica)item;
+                        if (dado == f.Cpf)
+                        {
+                            igual = true;
+                        }
+                    }
+                }
+            }
+            else
+            {
+
+                foreach(object item in ListaPessoas)
+                {
+                    if (item.GetType() == typeof(PessoaJuridica))
+                    {
+                    PessoaJuridica j = (PessoaJuridica)item;
+                        if (dado == j.Cnpj)
+                        {
+                            igual = true;
+                        }
+                    }
+                }
+            }
+            return igual;
         }
     }
 }

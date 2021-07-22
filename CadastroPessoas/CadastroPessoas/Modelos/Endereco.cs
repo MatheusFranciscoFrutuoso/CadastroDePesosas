@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CadastroPessoas.Modelos
 {
-    class Endereco
+    public class Endereco : Pessoa
     {
         public string Rua { get; set; }
         public int Numero { get; set; }

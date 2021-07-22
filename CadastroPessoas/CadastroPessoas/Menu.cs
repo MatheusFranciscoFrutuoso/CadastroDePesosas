@@ -6,79 +6,43 @@ using System.Threading.Tasks;
 using CadastroPessoas.Modelos;
 
 namespace CadastroPessoas
-
-
 {
-    class Menu
+    public class Menu : Tela
     {
-        Operacoes cadastrar = new Operacoes();
-        public void CriarMenu()
+        private ModuloPessoaFisica moduloPF;
+        private ModuloPessoaJuridica moduloPJ;
+        public Menu() : base("Bem-Vindo")
         {
-            Cabecalho();
-            Rodape();
-            Escolha();
-
+            moduloPF = new ModuloPessoaFisica();
+            moduloPJ = new ModuloPessoaJuridica();
+            this.funcaoEscolha = Escolha;
+            this.funcaoOpcoes = Opcoes;
         }
-
-        public void Cabecalho()
+        private int Opcoes()
         {
-            System.Console.WriteLine("*********************  Havan Labs ***********************");
-            System.Console.WriteLine("*********************  Bem-vindo ************************");
+            int escolha;
+            Console.WriteLine("[1] - Modulo Pessoa Física" +
+                            "\n[2] - Modulo Pessoa Jurídica" +
+                            "\n[0] - Sair");
+            Console.WriteLine("***********************************************************");
+            Console.Write("Opção:");
+            escolha = Convert.ToInt32(Console.ReadLine());
+            return escolha;
         }
-
-        public void Rodape()
+        private void Escolha(int escolha)
         {
-
-            System.Console.WriteLine("\nEscolha um opção do menu:");
-        }
-
-        public void Opcoes()
-        {
-            System.Console.WriteLine("\n\t1-Cadastrar Pessoa Física");
-            System.Console.WriteLine("\t2-Cadastrar Pessoa Jurídica");
-            System.Console.WriteLine("\t3-Listar Pessoas Físicas");
-            System.Console.WriteLine("\t4-Listar Pessoas Jurídicas");
-            System.Console.WriteLine("\t0-Sair");
-        }
-
-
-        public void Escolha()
-        {
-            int opcao = 0;
-
-            do
+            switch (escolha)
             {
-
-                Opcoes();
-                opcao = Validacao.ValidaInteiro();
-
-                switch (opcao)
-                {
-                    case 1:
-                        Console.Clear();
-                        cadastrar.Cadastrar(true);
-                        Console.Clear();
-                        break;
-                    case 2:
-                        Console.Clear();
-                        cadastrar.Cadastrar(false);
-                        Console.Clear();
-                        break;
-                    case 3:
-                        Console.Clear();
-                        cadastrar.ListarPessoas(true);
-                        break;
-                    case 4:
-                        Console.Clear();
-                        cadastrar.ListarPessoas(false);
-                        break;
-                    case 0:
-                        Console.Clear();
-                        System.Console.WriteLine("Saindo... Tecle ENTER para sair");
-                        break;
-                }
-            } while (opcao != 0);
-
+                case 1:
+                    moduloPF.Executa();
+                    break;
+                case 2:
+                    moduloPJ.Executa();
+                    break;
+                default:
+                    Console.WriteLine("Opção Inválida!");
+                    break;
+            }
         }
     }
 }

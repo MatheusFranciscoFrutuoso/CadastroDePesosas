@@ -12,7 +12,7 @@ namespace CadastroPessoas
         {
 
             Menu menu = new Menu();
-            menu.CriarMenu();
+            menu.Executa();
         }
     }
 }

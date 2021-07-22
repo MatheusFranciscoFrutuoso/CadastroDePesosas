@@ -8,6 +8,7 @@ namespace CadastroPessoas.Modelos
 {
     class PessoaFisica : Pessoa
     {
+        OperacoesPessoaFisica crud = new OperacoesPessoaFisica();
         public string Rg { get; set; }
         public string Cpf { get; set; }
 

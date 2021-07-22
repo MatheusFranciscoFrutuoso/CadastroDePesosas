@@ -52,37 +52,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="OperacoesPessoaFisica.cs">
+    <Compile Include="PessoaFisicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OperacoesPessoaFisica.Designer.cs">
-      <DependentUpon>OperacoesPessoaFisica.cs</DependentUpon>
+    <Compile Include="PessoaFisicaForm.Designer.cs">
+      <DependentUpon>PessoaFisicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OperacoesPessoaJuridica.cs">
+    <Compile Include="PessoaJuridicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OperacoesPessoaJuridica.Designer.cs">
-      <DependentUpon>OperacoesPessoaJuridica.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PessoaFisica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PessoaFisica.Designer.cs">
-      <DependentUpon>PessoaFisica.cs</DependentUpon>
+    <Compile Include="PessoaJuridicaForm.Designer.cs">
+      <DependentUpon>PessoaJuridicaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OperacoesPessoaFisica.resx">
-      <DependentUpon>OperacoesPessoaFisica.cs</DependentUpon>
+    <EmbeddedResource Include="PessoaFisicaForm.resx">
+      <DependentUpon>PessoaFisicaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OperacoesPessoaJuridica.resx">
-      <DependentUpon>OperacoesPessoaJuridica.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PessoaFisica.resx">
-      <DependentUpon>PessoaFisica.cs</DependentUpon>
+    <EmbeddedResource Include="PessoaJuridicaForm.resx">
+      <DependentUpon>PessoaJuridicaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

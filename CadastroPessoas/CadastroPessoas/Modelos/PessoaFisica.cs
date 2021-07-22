@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CadastroPessoas.Modelos
 {
-    class PessoaFisica : Pessoa
+    public class PessoaFisica : Pessoa
     {
         OperacoesPessoaFisica crud = new OperacoesPessoaFisica();
         public string Rg { get; set; }
@@ -18,7 +18,7 @@ namespace CadastroPessoas.Modelos
             this.DataNascimento = dataNasc;
             this.Rg = Rg;
             this.Cpf = cpf;
-            this.Endereco = endereco;
+            this.Enderecoo = endereco;
         }
         public PessoaFisica()
         {
@@ -26,7 +26,7 @@ namespace CadastroPessoas.Modelos
         }
         public override string ToString()
         {
-            return $"\n\tNome: {Nome}\n\tData de Nascimento: {DataNascimento.ToString("MM/dd/yyyy")}\n\tRG: {Rg}\n\tCPF: {Cpf}\n\tEndereço: {Endereco}";
+            return $"\n\tNome: {Nome}\n\tData de Nascimento: {DataNascimento.ToString("MM/dd/yyyy")}\n\tRG: {Rg}\n\tCPF: {Cpf}\n\tEndereço: {Enderecoo}";
         }
     }
 }

@@ -28,7 +28,7 @@ namespace CadastroPessoas
             Console.WriteLine("Digite um endereço válido(Cidade*, Bairro*, Rua*, Número*, Complemento):");
             string[] vetorEndereco = new string[5];
             vetorEndereco = Validacao.ValidaEndereco();
-            pessoaJ.Endereco = new Endereco(vetorEndereco[0], vetorEndereco[1], vetorEndereco[2], Convert.ToInt32(vetorEndereco[3].Trim()), vetorEndereco[4]);
+            pessoaJ.Enderecoo = new Endereco(vetorEndereco[0], vetorEndereco[1], vetorEndereco[2], Convert.ToInt32(vetorEndereco[3].Trim()), vetorEndereco[4]);
             pessoaJ.Cnpj = string.Empty;
             Console.WriteLine("Insira o IE: ");
             pessoaJ.Ie = Validacao.ValidaString();

@@ -53,16 +53,36 @@ namespace Forms
             this.lbEditavel = new System.Windows.Forms.Label();
             this.lbPessoaFNome = new System.Windows.Forms.Label();
             this.txPessoaFNome = new System.Windows.Forms.TextBox();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Número = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgPessoaFLista)).BeginInit();
             this.SuspendLayout();
             // 
             // dgPessoaFLista
             // 
             this.dgPessoaFLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPessoaFLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.DataNascimento,
+            this.RG,
+            this.CPF,
+            this.Cidade,
+            this.Bairro,
+            this.Rua,
+            this.Número,
+            this.Complemento});
             this.dgPessoaFLista.Location = new System.Drawing.Point(356, 82);
             this.dgPessoaFLista.Name = "dgPessoaFLista";
             this.dgPessoaFLista.Size = new System.Drawing.Size(418, 275);
             this.dgPessoaFLista.TabIndex = 58;
+            this.dgPessoaFLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPessoaFLista_CellContentClick);
             // 
             // dtPessoaFDataNascimento
             // 
@@ -79,6 +99,7 @@ namespace Forms
             this.btPessoaFLimpar.TabIndex = 56;
             this.btPessoaFLimpar.Text = "Limpar";
             this.btPessoaFLimpar.UseVisualStyleBackColor = true;
+            this.btPessoaFLimpar.Click += new System.EventHandler(this.btPessoaFLimpar_Click);
             // 
             // btPessoaFVoltar
             // 
@@ -277,6 +298,51 @@ namespace Forms
             this.txPessoaFNome.Size = new System.Drawing.Size(211, 20);
             this.txPessoaFNome.TabIndex = 35;
             // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // DataNascimento
+            // 
+            this.DataNascimento.HeaderText = "DataNascimento";
+            this.DataNascimento.Name = "DataNascimento";
+            // 
+            // RG
+            // 
+            this.RG.HeaderText = "RG";
+            this.RG.Name = "RG";
+            // 
+            // CPF
+            // 
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            // 
+            // Cidade
+            // 
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.Name = "Cidade";
+            // 
+            // Bairro
+            // 
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.Name = "Bairro";
+            // 
+            // Rua
+            // 
+            this.Rua.HeaderText = "Rua";
+            this.Rua.Name = "Rua";
+            // 
+            // Número
+            // 
+            this.Número.HeaderText = "Número";
+            this.Número.Name = "Número";
+            // 
+            // Complemento
+            // 
+            this.Complemento.HeaderText = "Complemento";
+            this.Complemento.Name = "Complemento";
+            // 
             // PessoaFisicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,5 +406,14 @@ namespace Forms
         private System.Windows.Forms.Label lbEditavel;
         private System.Windows.Forms.Label lbPessoaFNome;
         private System.Windows.Forms.TextBox txPessoaFNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataNascimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Número;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
     }
 }

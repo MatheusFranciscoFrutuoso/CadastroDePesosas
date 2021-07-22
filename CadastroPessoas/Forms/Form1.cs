@@ -26,6 +26,7 @@ namespace Forms
 
         private void btPessoaF_Click(object sender, EventArgs e)
         {
+            PessoaFisicaForm PessoaFisica = new PessoaFisicaForm();
             pessoaF.Show();
         }
 

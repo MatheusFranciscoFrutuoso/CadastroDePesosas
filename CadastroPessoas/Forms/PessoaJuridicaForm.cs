@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CadastroPessoas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,16 @@ namespace Forms
 {
     public partial class PessoaJuridicaForm : Form
     {
-        public List<Form1> PessoaJuridica { get; set; }
+        public List<PessoaJuridica> PessoaJuridica { get; set; }
         public PessoaJuridicaForm()
         {
             InitializeComponent();
-            PessoaJuridica = new List<Form1>();
+            PessoaJuridica = new List<PessoaJuridica>();
         }
 
         private void btPessoaJSalvar_Click(object sender, EventArgs e)
         {
-            Form1 pessoaJ = new Form1();
+            PessoaJuridica pessoaJ = new PessoaJuridica();
             string Nome = txPessoaJNome.Text;
             DateTime DataNascimento = Convert.ToDateTime(dtPessoaJDataNascimento.Text);
             string IE = txPessoaJIe.Text;
@@ -33,11 +34,12 @@ namespace Forms
             string Complemento = txPessoaJComplemento.Text;
             this.PessoaJuridica.Add(pessoaJ);
         }
-        private void CarregaFormulario(Form1 pessoaJ)
+        /*private void CarregaFormulario(Form1 pessoaJ)
         {
             this.tbId.Text = pessoaJ.Id.ToString();
             this.txPessoaJNome.Text = pessoaJ.Nome;
             this.tbDescricao.Text = pessoaJ.Descricao;
             this.lbMensagem.Text = String.Empty;
-        }
+        }*/
+    }
 }

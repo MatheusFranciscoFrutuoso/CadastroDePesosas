@@ -22,6 +22,10 @@ namespace CadastroPessoas.Modelos
             this.Bairro = bairro;
             this.Cidade = cidade;
         }
+        public Endereco()
+        {
+
+        }
         public override string ToString()
         {
             return $"{Cidade}, {Bairro}, {Rua}, {Numero}, {Complemento}";

@@ -50,9 +50,11 @@ namespace Forms
             this.lbPessoaFRg = new System.Windows.Forms.Label();
             this.txPessoaFRg = new System.Windows.Forms.TextBox();
             this.lbPessoaFDataNascimento = new System.Windows.Forms.Label();
-            this.lbEditavel = new System.Windows.Forms.Label();
             this.lbPessoaFNome = new System.Windows.Forms.Label();
             this.txPessoaFNome = new System.Windows.Forms.TextBox();
+            this.lbEditavel = new System.Windows.Forms.Label();
+            this.btPessoaFEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btPessoaFDeletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +71,8 @@ namespace Forms
             // 
             this.dgPessoaFLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPessoaFLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btPessoaFEditar,
+            this.btPessoaFDeletar,
             this.Nome,
             this.DataNascimento,
             this.RG,
@@ -93,7 +97,7 @@ namespace Forms
             // 
             // btPessoaFLimpar
             // 
-            this.btPessoaFLimpar.Location = new System.Drawing.Point(210, 395);
+            this.btPessoaFLimpar.Location = new System.Drawing.Point(220, 395);
             this.btPessoaFLimpar.Name = "btPessoaFLimpar";
             this.btPessoaFLimpar.Size = new System.Drawing.Size(75, 23);
             this.btPessoaFLimpar.TabIndex = 56;
@@ -112,7 +116,7 @@ namespace Forms
             // 
             // btPessoaFSalvar
             // 
-            this.btPessoaFSalvar.Location = new System.Drawing.Point(129, 395);
+            this.btPessoaFSalvar.Location = new System.Drawing.Point(139, 395);
             this.btPessoaFSalvar.Name = "btPessoaFSalvar";
             this.btPessoaFSalvar.Size = new System.Drawing.Size(75, 23);
             this.btPessoaFSalvar.TabIndex = 54;
@@ -268,18 +272,6 @@ namespace Forms
             this.lbPessoaFDataNascimento.Text = "Data de Nascimento:";
             this.lbPessoaFDataNascimento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbEditavel
-            // 
-            this.lbEditavel.AutoSize = true;
-            this.lbEditavel.BackColor = System.Drawing.Color.Transparent;
-            this.lbEditavel.ForeColor = System.Drawing.Color.Black;
-            this.lbEditavel.Location = new System.Drawing.Point(353, 32);
-            this.lbEditavel.Name = "lbEditavel";
-            this.lbEditavel.Size = new System.Drawing.Size(74, 13);
-            this.lbEditavel.TabIndex = 37;
-            this.lbEditavel.Text = "Pessoa Física";
-            this.lbEditavel.Click += new System.EventHandler(this.lbEditavel_Click);
-            // 
             // lbPessoaFNome
             // 
             this.lbPessoaFNome.AutoSize = true;
@@ -297,6 +289,29 @@ namespace Forms
             this.txPessoaFNome.Name = "txPessoaFNome";
             this.txPessoaFNome.Size = new System.Drawing.Size(211, 20);
             this.txPessoaFNome.TabIndex = 35;
+            // 
+            // lbEditavel
+            // 
+            this.lbEditavel.AutoSize = true;
+            this.lbEditavel.BackColor = System.Drawing.Color.Transparent;
+            this.lbEditavel.ForeColor = System.Drawing.Color.Black;
+            this.lbEditavel.Location = new System.Drawing.Point(353, 37);
+            this.lbEditavel.Name = "lbEditavel";
+            this.lbEditavel.Size = new System.Drawing.Size(74, 13);
+            this.lbEditavel.TabIndex = 59;
+            this.lbEditavel.Text = "Pessoa Física";
+            // 
+            // btPessoaFEditar
+            // 
+            this.btPessoaFEditar.HeaderText = "";
+            this.btPessoaFEditar.Name = "btPessoaFEditar";
+            this.btPessoaFEditar.Width = 45;
+            // 
+            // btPessoaFDeletar
+            // 
+            this.btPessoaFDeletar.HeaderText = "";
+            this.btPessoaFDeletar.Name = "btPessoaFDeletar";
+            this.btPessoaFDeletar.Width = 45;
             // 
             // Nome
             // 
@@ -348,6 +363,7 @@ namespace Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbEditavel);
             this.Controls.Add(this.dgPessoaFLista);
             this.Controls.Add(this.dtPessoaFDataNascimento);
             this.Controls.Add(this.btPessoaFLimpar);
@@ -369,7 +385,6 @@ namespace Forms
             this.Controls.Add(this.lbPessoaFRg);
             this.Controls.Add(this.txPessoaFRg);
             this.Controls.Add(this.lbPessoaFDataNascimento);
-            this.Controls.Add(this.lbEditavel);
             this.Controls.Add(this.lbPessoaFNome);
             this.Controls.Add(this.txPessoaFNome);
             this.Name = "PessoaFisicaForm";
@@ -403,9 +418,11 @@ namespace Forms
         private System.Windows.Forms.Label lbPessoaFRg;
         private System.Windows.Forms.TextBox txPessoaFRg;
         private System.Windows.Forms.Label lbPessoaFDataNascimento;
-        private System.Windows.Forms.Label lbEditavel;
         private System.Windows.Forms.Label lbPessoaFNome;
         private System.Windows.Forms.TextBox txPessoaFNome;
+        private System.Windows.Forms.Label lbEditavel;
+        private System.Windows.Forms.DataGridViewButtonColumn btPessoaFEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn btPessoaFDeletar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataNascimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn RG;

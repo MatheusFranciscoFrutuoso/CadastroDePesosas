@@ -18,15 +18,15 @@ namespace CadastroPessoas.Modelos
             this.DataNascimento = dataNasc;
             this.Rg = Rg;
             this.Cpf = cpf;
-            this.Enderecoo = endereco;
+            this.Endereco = endereco;
         }
         public PessoaFisica()
         {
-
+            this.Endereco = new Endereco();
         }
         public override string ToString()
         {
-            return $"\n\tNome: {Nome}\n\tData de Nascimento: {DataNascimento.ToString("MM/dd/yyyy")}\n\tRG: {Rg}\n\tCPF: {Cpf}\n\tEndereço: {Enderecoo}";
+            return $"\n\tNome: {Nome}\n\tData de Nascimento: {DataNascimento.ToString("MM/dd/yyyy")}\n\tRG: {Rg}\n\tCPF: {Cpf}\n\tEndereço: {Endereco}";
         }
     }
 }

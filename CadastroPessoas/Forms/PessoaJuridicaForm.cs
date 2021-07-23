@@ -18,28 +18,92 @@ namespace Forms
         {
             InitializeComponent();
             PessoaJuridica = new List<PessoaJuridica>();
+            dgPessoaJLista.AutoGenerateColumns = false;
+            dgPessoaJLista.AllowUserToAddRows = false;
+            CarregarLista();
         }
 
         private void btPessoaJSalvar_Click(object sender, EventArgs e)
         {
             PessoaJuridica pessoaJ = new PessoaJuridica();
-            string Nome = txPessoaJNome.Text;
+            pessoaJ.Nome = txPessoaJNome.Text;
             DateTime DataNascimento = Convert.ToDateTime(dtPessoaJDataNascimento.Text);
-            string IE = txPessoaJIe.Text;
-            string CNPJ = txPessoaJCnpj.Text;
-            string Cidade = txPessoaJCidade.Text;
-            string Bairro = txPessoaJBairro.Text;
-            string Rua = txPessoaJRua.Text;
-            int Numero = Convert.ToInt32(txPessoaJNumero.Text);
-            string Complemento = txPessoaJComplemento.Text;
-            this.PessoaJuridica.Add(pessoaJ);
+            pessoaJ.Ie = txPessoaJIe.Text;
+            pessoaJ.Cnpj = txPessoaJCnpj.Text;
+            pessoaJ.Endereco.Cidade = txPessoaJCidade.Text;
+            pessoaJ.Endereco.Bairro = txPessoaJBairro.Text;
+            pessoaJ.Endereco.Rua = txPessoaJRua.Text;
+            pessoaJ.Endereco.Numero = Convert.ToInt32(txPessoaJNumero.Text);
+            pessoaJ.Endereco.Complemento = txPessoaJComplemento.Text;
+            int indexDadoProcurado = PessoaJuridica.FindIndex(c => c.Cnpj == pessoaJ.Cnpj);
+            if (indexDadoProcurado == -1)
+            {
+                this.PessoaJuridica.Add(pessoaJ);
+                MessageBox.Show("Salvo com sucesso");
+            }
+            else
+            {
+                this.PessoaJuridica[indexDadoProcurado] = pessoaJ;
+                MessageBox.Show("Editado com sucesso");
+            }
+            CarregarLista();
+            LimparCampos();
         }
-        /*private void CarregaFormulario(Form1 pessoaJ)
+        private void CarregaFormulario(PessoaJuridica pessoaJ)
         {
-            this.tbId.Text = pessoaJ.Id.ToString();
             this.txPessoaJNome.Text = pessoaJ.Nome;
-            this.tbDescricao.Text = pessoaJ.Descricao;
-            this.lbMensagem.Text = String.Empty;
-        }*/
+            this.dtPessoaJDataNascimento.Text = pessoaJ.DataNascimento.ToString();
+            this.txPessoaJIe.Text = pessoaJ.Ie;
+            this.txPessoaJCnpj.Text = pessoaJ.Cnpj;
+            this.txPessoaJCidade.Text = pessoaJ.Endereco.Cidade;
+            this.txPessoaJBairro.Text = pessoaJ.Endereco.Bairro;
+            this.txPessoaJRua.Text = pessoaJ.Endereco.Rua;
+            this.txPessoaJNumero.Text = pessoaJ.Endereco.Numero.ToString();
+            this.txPessoaJComplemento.Text = pessoaJ.Endereco.Complemento;
+        }
+
+        private void btPessoaJLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+        private void CarregarLista()
+        {
+            dgPessoaJLista.Rows.Clear();
+            foreach (var item in PessoaJuridica)
+            {
+                dgPessoaJLista.Rows.Add("Editar", "Deletar", item.Nome, item.DataNascimento, item.Ie, item.Cnpj, item.Endereco.Cidade, item.Endereco.Bairro, item.Endereco.Rua, item.Endereco.Numero, item.Endereco.Complemento);
+            }
+            dgPessoaJLista.Refresh();
+        }
+        private void LimparCampos()
+        {
+            txPessoaJNome.Text = String.Empty;
+            dtPessoaJDataNascimento.Text = String.Empty;
+            txPessoaJIe.Text = String.Empty;
+            txPessoaJCnpj.Text = String.Empty;
+            txPessoaJCidade.Text = String.Empty;
+            txPessoaJBairro.Text = String.Empty;
+            txPessoaJRua.Text = String.Empty;
+            txPessoaJNumero.Text = String.Empty;
+            txPessoaJComplemento.Text = String.Empty;
+        }
+
+        private void dgPessoaJLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.ColumnIndex;
+
+            if (indice == 0)
+            {
+                PessoaJuridica pessoaJ = this.PessoaJuridica[e.RowIndex];
+                CarregaFormulario(pessoaJ);
+            }
+            else if (indice == 1)
+            {
+                PessoaJuridica pessoaJ = this.PessoaJuridica[e.RowIndex];
+                this.PessoaJuridica.Remove(pessoaJ);
+                MessageBox.Show("Removido com sucesso");
+                CarregarLista();
+            }
+        }
     }
 }

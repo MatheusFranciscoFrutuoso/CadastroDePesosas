@@ -28,7 +28,7 @@ namespace CadastroPessoas
             Console.WriteLine("Digite um endereço válido(Cidade*, Bairro*, Rua*, Número*, Complemento):");
             string[] vetorEndereco = new string[5];
             vetorEndereco = Validacao.ValidaEndereco();
-            pessoaF.Enderecoo = new Endereco(vetorEndereco[0], vetorEndereco[1], vetorEndereco[2], Convert.ToInt32(vetorEndereco[3].Trim()), vetorEndereco[4]);
+            pessoaF.Endereco = new Endereco(vetorEndereco[0], vetorEndereco[1], vetorEndereco[2], Convert.ToInt32(vetorEndereco[3].Trim()), vetorEndereco[4]);
             Console.WriteLine("Insira o RG: ");
             pessoaF.Rg = Validacao.ValidaString();
             pessoaF.Cpf = string.Empty;

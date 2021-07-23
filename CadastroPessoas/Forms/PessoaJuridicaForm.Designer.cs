@@ -33,16 +33,6 @@ namespace Forms
             this.btPessoaJLimpar = new System.Windows.Forms.Button();
             this.btPessoaJVoltar = new System.Windows.Forms.Button();
             this.btPessoaJSalvar = new System.Windows.Forms.Button();
-            this.lvPessoaJLista = new System.Windows.Forms.ListView();
-            this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Data_de_Nascimento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.RG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CPF = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Cidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Bairro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Rua = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Número = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Complemento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbPessoaJComplemento = new System.Windows.Forms.Label();
             this.txPessoaJComplemento = new System.Windows.Forms.TextBox();
             this.lbPessoaJNumero = new System.Windows.Forms.Label();
@@ -62,6 +52,19 @@ namespace Forms
             this.lbPessoaJIntro = new System.Windows.Forms.Label();
             this.lbPessoaJNome = new System.Windows.Forms.Label();
             this.txPessoaJNome = new System.Windows.Forms.TextBox();
+            this.dgPessoaJLista = new System.Windows.Forms.DataGridView();
+            this.btPessoaJEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btPessoaJDeletar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Número = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPessoaJLista)).BeginInit();
             this.SuspendLayout();
             // 
             // dtPessoaJDataNascimento
@@ -73,12 +76,13 @@ namespace Forms
             // 
             // btPessoaJLimpar
             // 
-            this.btPessoaJLimpar.Location = new System.Drawing.Point(210, 395);
+            this.btPessoaJLimpar.Location = new System.Drawing.Point(220, 395);
             this.btPessoaJLimpar.Name = "btPessoaJLimpar";
             this.btPessoaJLimpar.Size = new System.Drawing.Size(75, 23);
             this.btPessoaJLimpar.TabIndex = 80;
             this.btPessoaJLimpar.Text = "Limpar";
             this.btPessoaJLimpar.UseVisualStyleBackColor = true;
+            this.btPessoaJLimpar.Click += new System.EventHandler(this.btPessoaJLimpar_Click);
             // 
             // btPessoaJVoltar
             // 
@@ -91,60 +95,13 @@ namespace Forms
             // 
             // btPessoaJSalvar
             // 
-            this.btPessoaJSalvar.Location = new System.Drawing.Point(129, 395);
+            this.btPessoaJSalvar.Location = new System.Drawing.Point(139, 395);
             this.btPessoaJSalvar.Name = "btPessoaJSalvar";
             this.btPessoaJSalvar.Size = new System.Drawing.Size(75, 23);
             this.btPessoaJSalvar.TabIndex = 78;
             this.btPessoaJSalvar.Text = "Salvar";
             this.btPessoaJSalvar.UseVisualStyleBackColor = true;
             this.btPessoaJSalvar.Click += new System.EventHandler(this.btPessoaJSalvar_Click);
-            // 
-            // lvPessoaJLista
-            // 
-            this.lvPessoaJLista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Nome,
-            this.Data_de_Nascimento,
-            this.RG,
-            this.CPF,
-            this.Cidade,
-            this.Bairro,
-            this.Rua,
-            this.Número,
-            this.Complemento});
-            this.lvPessoaJLista.HideSelection = false;
-            this.lvPessoaJLista.Location = new System.Drawing.Point(356, 82);
-            this.lvPessoaJLista.Name = "lvPessoaJLista";
-            this.lvPessoaJLista.Size = new System.Drawing.Size(418, 275);
-            this.lvPessoaJLista.TabIndex = 77;
-            this.lvPessoaJLista.UseCompatibleStateImageBehavior = false;
-            // 
-            // Nome
-            // 
-            this.Nome.DisplayIndex = 1;
-            // 
-            // Data_de_Nascimento
-            // 
-            this.Data_de_Nascimento.DisplayIndex = 2;
-            // 
-            // RG
-            // 
-            this.RG.DisplayIndex = 3;
-            // 
-            // CPF
-            // 
-            this.CPF.DisplayIndex = 4;
-            // 
-            // Cidade
-            // 
-            this.Cidade.DisplayIndex = 5;
-            // 
-            // Bairro
-            // 
-            this.Bairro.DisplayIndex = 6;
-            // 
-            // Rua
-            // 
-            this.Rua.DisplayIndex = 0;
             // 
             // lbPessoaJComplemento
             // 
@@ -323,16 +280,94 @@ namespace Forms
             this.txPessoaJNome.Size = new System.Drawing.Size(211, 20);
             this.txPessoaJNome.TabIndex = 58;
             // 
+            // dgPessoaJLista
+            // 
+            this.dgPessoaJLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPessoaJLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btPessoaJEditar,
+            this.btPessoaJDeletar,
+            this.Nome,
+            this.DataNascimento,
+            this.IE,
+            this.CNPJ,
+            this.Cidade,
+            this.Bairro,
+            this.Rua,
+            this.Número,
+            this.Complemento});
+            this.dgPessoaJLista.Location = new System.Drawing.Point(356, 82);
+            this.dgPessoaJLista.Name = "dgPessoaJLista";
+            this.dgPessoaJLista.Size = new System.Drawing.Size(418, 275);
+            this.dgPessoaJLista.TabIndex = 82;
+            this.dgPessoaJLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPessoaJLista_CellContentClick);
+            // 
+            // btPessoaJEditar
+            // 
+            this.btPessoaJEditar.HeaderText = "";
+            this.btPessoaJEditar.Name = "btPessoaJEditar";
+            this.btPessoaJEditar.Width = 45;
+            // 
+            // btPessoaJDeletar
+            // 
+            this.btPessoaJDeletar.HeaderText = "";
+            this.btPessoaJDeletar.Name = "btPessoaJDeletar";
+            this.btPessoaJDeletar.Width = 45;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // DataNascimento
+            // 
+            this.DataNascimento.HeaderText = "DataNascimento";
+            this.DataNascimento.Name = "DataNascimento";
+            // 
+            // IE
+            // 
+            this.IE.HeaderText = "IE";
+            this.IE.Name = "IE";
+            // 
+            // CNPJ
+            // 
+            this.CNPJ.HeaderText = "CNPJ";
+            this.CNPJ.Name = "CNPJ";
+            // 
+            // Cidade
+            // 
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.Name = "Cidade";
+            // 
+            // Bairro
+            // 
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.Name = "Bairro";
+            // 
+            // Rua
+            // 
+            this.Rua.HeaderText = "Rua";
+            this.Rua.Name = "Rua";
+            // 
+            // Número
+            // 
+            this.Número.HeaderText = "Número";
+            this.Número.Name = "Número";
+            // 
+            // Complemento
+            // 
+            this.Complemento.HeaderText = "Complemento";
+            this.Complemento.Name = "Complemento";
+            // 
             // PessoaJuridicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgPessoaJLista);
             this.Controls.Add(this.dtPessoaJDataNascimento);
             this.Controls.Add(this.btPessoaJLimpar);
             this.Controls.Add(this.btPessoaJVoltar);
             this.Controls.Add(this.btPessoaJSalvar);
-            this.Controls.Add(this.lvPessoaJLista);
             this.Controls.Add(this.lbPessoaJComplemento);
             this.Controls.Add(this.txPessoaJComplemento);
             this.Controls.Add(this.lbPessoaJNumero);
@@ -354,6 +389,7 @@ namespace Forms
             this.Controls.Add(this.txPessoaJNome);
             this.Name = "PessoaJuridicaForm";
             this.Text = "PessoaJuridicaForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dgPessoaJLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,16 +401,6 @@ namespace Forms
         private System.Windows.Forms.Button btPessoaJLimpar;
         private System.Windows.Forms.Button btPessoaJVoltar;
         private System.Windows.Forms.Button btPessoaJSalvar;
-        private System.Windows.Forms.ListView lvPessoaJLista;
-        private System.Windows.Forms.ColumnHeader Nome;
-        private System.Windows.Forms.ColumnHeader Data_de_Nascimento;
-        private System.Windows.Forms.ColumnHeader RG;
-        private System.Windows.Forms.ColumnHeader CPF;
-        private System.Windows.Forms.ColumnHeader Cidade;
-        private System.Windows.Forms.ColumnHeader Bairro;
-        private System.Windows.Forms.ColumnHeader Rua;
-        private System.Windows.Forms.ColumnHeader Número;
-        private System.Windows.Forms.ColumnHeader Complemento;
         private System.Windows.Forms.Label lbPessoaJComplemento;
         private System.Windows.Forms.TextBox txPessoaJComplemento;
         private System.Windows.Forms.Label lbPessoaJNumero;
@@ -394,5 +420,17 @@ namespace Forms
         private System.Windows.Forms.Label lbPessoaJIntro;
         private System.Windows.Forms.Label lbPessoaJNome;
         private System.Windows.Forms.TextBox txPessoaJNome;
+        private System.Windows.Forms.DataGridView dgPessoaJLista;
+        private System.Windows.Forms.DataGridViewButtonColumn btPessoaJEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn btPessoaJDeletar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataNascimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Número;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
     }
 }

@@ -10,16 +10,6 @@ namespace CadastroPessoas.Modelos
     {
         public string Nome { get; set; }
         public DateTime DataNascimento { get; set; }
-        public Endereco Enderecoo { get; set; }
-
-
-        /*public Pessoa()
-        {
-            Enderecoo
-        }*/
-
-
+        public Endereco Endereco { get; set; }
     }
-    
-
 }

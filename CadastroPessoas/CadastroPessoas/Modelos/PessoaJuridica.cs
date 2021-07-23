@@ -17,15 +17,15 @@ namespace CadastroPessoas.Modelos
             this.DataNascimento = dataNasc;
             this.Ie = ie;
             this.Cnpj = cnpj;
-            this.Enderecoo = endereco;
+            this.Endereco = endereco;
         }
         public PessoaJuridica()
         {
-
+            this.Endereco = new Endereco();
         }
         public override string ToString()
         {
-            return $"\n\tNome: {Nome}\n\tData de Nascimento: {DataNascimento.ToString("MM/dd/yyyy")}\n\tIE: {Ie}\n\tCNPJ: {Cnpj}\n\tEndereço: {Enderecoo}";
+            return $"\n\tNome: {Nome}\n\tData de Nascimento: {DataNascimento.ToString("MM/dd/yyyy")}\n\tIE: {Ie}\n\tCNPJ: {Cnpj}\n\tEndereço: {Endereco}";
         }
     }
 }

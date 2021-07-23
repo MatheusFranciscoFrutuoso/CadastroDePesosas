@@ -20,7 +20,7 @@ namespace Forms
             PessoaFisica = new List<PessoaFisica>();
             dgPessoaFLista.AutoGenerateColumns = false;
             dgPessoaFLista.AllowUserToAddRows = false;
-            //CarregarLista();
+            CarregarLista();
 
         }
 
@@ -31,11 +31,11 @@ namespace Forms
             pessoaF.DataNascimento = Convert.ToDateTime(dtPessoaFDataNascimento.Text);
             pessoaF.Rg = txPessoaFRg.Text;
             pessoaF.Cpf = txPessoaFCpf.Text;
-            pessoaF.Enderecoo.Cidade = txPessoaFCidade.Text;
-            pessoaF.Enderecoo.Bairro = txPessoaFBairro.Text;
-            pessoaF.Enderecoo.Rua = txPessoaFRua.Text;
-            pessoaF.Enderecoo.Numero = Convert.ToInt32(txPessoaFNumero.Text);
-            pessoaF.Enderecoo.Complemento = txPessoaFComplemento.Text;
+            pessoaF.Endereco.Cidade = txPessoaFCidade.Text;
+            pessoaF.Endereco.Bairro = txPessoaFBairro.Text;
+            pessoaF.Endereco.Rua = txPessoaFRua.Text;
+            pessoaF.Endereco.Numero = Convert.ToInt32(txPessoaFNumero.Text);
+            pessoaF.Endereco.Complemento = txPessoaFComplemento.Text;
             int indexDadoProcurado = PessoaFisica.FindIndex(c => c.Cpf == pessoaF.Cpf);
             if (indexDadoProcurado == -1)
             {
@@ -51,12 +51,6 @@ namespace Forms
             LimparCampos();
             
         }
-
-        private void lbEditavel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btPessoaFLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
@@ -66,7 +60,7 @@ namespace Forms
             dgPessoaFLista.Rows.Clear();
             foreach (var item in PessoaFisica)
             {
-                dgPessoaFLista.Rows.Add(item.Nome, item.DataNascimento, item.Rg, item.Cpf, item.Enderecoo.Cidade, item.Enderecoo.Bairro, item.Enderecoo.Rua, item.Enderecoo.Numero, item.Enderecoo.Complemento);
+                dgPessoaFLista.Rows.Add("Editar", "Deletar", item.Nome, item.DataNascimento, item.Rg, item.Cpf, item.Endereco.Cidade, item.Endereco.Bairro, item.Endereco.Rua, item.Endereco.Numero, item.Endereco.Complemento);
             }
             dgPessoaFLista.Refresh();
         }
@@ -87,12 +81,12 @@ namespace Forms
         {
             int indice = e.ColumnIndex;
 
-            if (indice == 3)
+            if (indice == 0)
             {
                 PessoaFisica pessoaF = this.PessoaFisica[e.RowIndex];
                 CarregaFormulario(pessoaF);
             }
-            else if (indice == 4)
+            else if (indice == 1)
             {
                 PessoaFisica pessoaF = this.PessoaFisica[e.RowIndex];
                 this.PessoaFisica.Remove(pessoaF);
@@ -106,11 +100,11 @@ namespace Forms
             this.dtPessoaFDataNascimento.Text = pessoaF.DataNascimento.ToString();
             this.txPessoaFRg.Text = pessoaF.Rg;
             this.txPessoaFCpf.Text = pessoaF.Cpf;
-            this.txPessoaFCidade.Text = pessoaF.Enderecoo.Cidade;
-            this.txPessoaFBairro.Text = pessoaF.Enderecoo.Bairro;
-            this.txPessoaFRua.Text = pessoaF.Enderecoo.Rua;
-            this.txPessoaFNumero.Text = pessoaF.Enderecoo.Numero.ToString();
-            this.txPessoaFComplemento.Text = pessoaF.Enderecoo.Complemento;
+            this.txPessoaFCidade.Text = pessoaF.Endereco.Cidade;
+            this.txPessoaFBairro.Text = pessoaF.Endereco.Bairro;
+            this.txPessoaFRua.Text = pessoaF.Endereco.Rua;
+            this.txPessoaFNumero.Text = pessoaF.Endereco.Numero.ToString();
+            this.txPessoaFComplemento.Text = pessoaF.Endereco.Complemento;
         }
     }
 }

@@ -69,14 +69,14 @@ namespace Forms
             // 
             // dtPessoaJDataNascimento
             // 
-            this.dtPessoaJDataNascimento.Location = new System.Drawing.Point(139, 108);
+            this.dtPessoaJDataNascimento.Location = new System.Drawing.Point(125, 114);
             this.dtPessoaJDataNascimento.Name = "dtPessoaJDataNascimento";
             this.dtPessoaJDataNascimento.Size = new System.Drawing.Size(211, 20);
             this.dtPessoaJDataNascimento.TabIndex = 81;
             // 
             // btPessoaJLimpar
             // 
-            this.btPessoaJLimpar.Location = new System.Drawing.Point(220, 395);
+            this.btPessoaJLimpar.Location = new System.Drawing.Point(93, 221);
             this.btPessoaJLimpar.Name = "btPessoaJLimpar";
             this.btPessoaJLimpar.Size = new System.Drawing.Size(75, 23);
             this.btPessoaJLimpar.TabIndex = 80;
@@ -86,7 +86,7 @@ namespace Forms
             // 
             // btPessoaJVoltar
             // 
-            this.btPessoaJVoltar.Location = new System.Drawing.Point(699, 395);
+            this.btPessoaJVoltar.Location = new System.Drawing.Point(713, 221);
             this.btPessoaJVoltar.Name = "btPessoaJVoltar";
             this.btPessoaJVoltar.Size = new System.Drawing.Size(75, 23);
             this.btPessoaJVoltar.TabIndex = 79;
@@ -96,7 +96,7 @@ namespace Forms
             // 
             // btPessoaJSalvar
             // 
-            this.btPessoaJSalvar.Location = new System.Drawing.Point(139, 395);
+            this.btPessoaJSalvar.Location = new System.Drawing.Point(12, 221);
             this.btPessoaJSalvar.Name = "btPessoaJSalvar";
             this.btPessoaJSalvar.Size = new System.Drawing.Size(75, 23);
             this.btPessoaJSalvar.TabIndex = 78;
@@ -107,7 +107,7 @@ namespace Forms
             // lbPessoaJComplemento
             // 
             this.lbPessoaJComplemento.AutoSize = true;
-            this.lbPessoaJComplemento.Location = new System.Drawing.Point(26, 340);
+            this.lbPessoaJComplemento.Location = new System.Drawing.Point(463, 197);
             this.lbPessoaJComplemento.Name = "lbPessoaJComplemento";
             this.lbPessoaJComplemento.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJComplemento.Size = new System.Drawing.Size(74, 13);
@@ -117,7 +117,7 @@ namespace Forms
             // 
             // txPessoaJComplemento
             // 
-            this.txPessoaJComplemento.Location = new System.Drawing.Point(139, 337);
+            this.txPessoaJComplemento.Location = new System.Drawing.Point(576, 194);
             this.txPessoaJComplemento.Name = "txPessoaJComplemento";
             this.txPessoaJComplemento.Size = new System.Drawing.Size(211, 20);
             this.txPessoaJComplemento.TabIndex = 75;
@@ -125,7 +125,7 @@ namespace Forms
             // lbPessoaJNumero
             // 
             this.lbPessoaJNumero.AutoSize = true;
-            this.lbPessoaJNumero.Location = new System.Drawing.Point(26, 314);
+            this.lbPessoaJNumero.Location = new System.Drawing.Point(463, 171);
             this.lbPessoaJNumero.Name = "lbPessoaJNumero";
             this.lbPessoaJNumero.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJNumero.Size = new System.Drawing.Size(47, 13);
@@ -135,7 +135,7 @@ namespace Forms
             // 
             // txPessoaJNumero
             // 
-            this.txPessoaJNumero.Location = new System.Drawing.Point(139, 311);
+            this.txPessoaJNumero.Location = new System.Drawing.Point(576, 168);
             this.txPessoaJNumero.Name = "txPessoaJNumero";
             this.txPessoaJNumero.Size = new System.Drawing.Size(211, 20);
             this.txPessoaJNumero.TabIndex = 73;
@@ -143,7 +143,7 @@ namespace Forms
             // lbPessoaJRua
             // 
             this.lbPessoaJRua.AutoSize = true;
-            this.lbPessoaJRua.Location = new System.Drawing.Point(26, 288);
+            this.lbPessoaJRua.Location = new System.Drawing.Point(463, 145);
             this.lbPessoaJRua.Name = "lbPessoaJRua";
             this.lbPessoaJRua.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJRua.Size = new System.Drawing.Size(30, 13);
@@ -153,7 +153,7 @@ namespace Forms
             // 
             // txPessoaJRua
             // 
-            this.txPessoaJRua.Location = new System.Drawing.Point(139, 285);
+            this.txPessoaJRua.Location = new System.Drawing.Point(576, 142);
             this.txPessoaJRua.Name = "txPessoaJRua";
             this.txPessoaJRua.Size = new System.Drawing.Size(211, 20);
             this.txPessoaJRua.TabIndex = 71;
@@ -161,7 +161,7 @@ namespace Forms
             // lbPessoaJBairro
             // 
             this.lbPessoaJBairro.AutoSize = true;
-            this.lbPessoaJBairro.Location = new System.Drawing.Point(26, 262);
+            this.lbPessoaJBairro.Location = new System.Drawing.Point(463, 119);
             this.lbPessoaJBairro.Name = "lbPessoaJBairro";
             this.lbPessoaJBairro.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJBairro.Size = new System.Drawing.Size(37, 13);
@@ -171,7 +171,7 @@ namespace Forms
             // 
             // txPessoaJBairro
             // 
-            this.txPessoaJBairro.Location = new System.Drawing.Point(139, 259);
+            this.txPessoaJBairro.Location = new System.Drawing.Point(576, 116);
             this.txPessoaJBairro.Name = "txPessoaJBairro";
             this.txPessoaJBairro.Size = new System.Drawing.Size(211, 20);
             this.txPessoaJBairro.TabIndex = 69;
@@ -179,7 +179,7 @@ namespace Forms
             // lbPessoaJCidade
             // 
             this.lbPessoaJCidade.AutoSize = true;
-            this.lbPessoaJCidade.Location = new System.Drawing.Point(26, 236);
+            this.lbPessoaJCidade.Location = new System.Drawing.Point(463, 93);
             this.lbPessoaJCidade.Name = "lbPessoaJCidade";
             this.lbPessoaJCidade.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJCidade.Size = new System.Drawing.Size(43, 13);
@@ -189,7 +189,7 @@ namespace Forms
             // 
             // txPessoaJCidade
             // 
-            this.txPessoaJCidade.Location = new System.Drawing.Point(139, 233);
+            this.txPessoaJCidade.Location = new System.Drawing.Point(576, 90);
             this.txPessoaJCidade.Name = "txPessoaJCidade";
             this.txPessoaJCidade.Size = new System.Drawing.Size(211, 20);
             this.txPessoaJCidade.TabIndex = 67;
@@ -197,7 +197,7 @@ namespace Forms
             // lbPessoaJEndereco
             // 
             this.lbPessoaJEndereco.AutoSize = true;
-            this.lbPessoaJEndereco.Location = new System.Drawing.Point(26, 210);
+            this.lbPessoaJEndereco.Location = new System.Drawing.Point(463, 67);
             this.lbPessoaJEndereco.Name = "lbPessoaJEndereco";
             this.lbPessoaJEndereco.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJEndereco.Size = new System.Drawing.Size(56, 13);
@@ -208,7 +208,7 @@ namespace Forms
             // lbPessoaJCnpj
             // 
             this.lbPessoaJCnpj.AutoSize = true;
-            this.lbPessoaJCnpj.Location = new System.Drawing.Point(26, 163);
+            this.lbPessoaJCnpj.Location = new System.Drawing.Point(12, 169);
             this.lbPessoaJCnpj.Name = "lbPessoaJCnpj";
             this.lbPessoaJCnpj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJCnpj.Size = new System.Drawing.Size(37, 13);
@@ -218,7 +218,7 @@ namespace Forms
             // 
             // txPessoaJCnpj
             // 
-            this.txPessoaJCnpj.Location = new System.Drawing.Point(139, 160);
+            this.txPessoaJCnpj.Location = new System.Drawing.Point(125, 166);
             this.txPessoaJCnpj.Name = "txPessoaJCnpj";
             this.txPessoaJCnpj.Size = new System.Drawing.Size(211, 20);
             this.txPessoaJCnpj.TabIndex = 64;
@@ -226,7 +226,7 @@ namespace Forms
             // lbPessoaJIe
             // 
             this.lbPessoaJIe.AutoSize = true;
-            this.lbPessoaJIe.Location = new System.Drawing.Point(26, 137);
+            this.lbPessoaJIe.Location = new System.Drawing.Point(12, 143);
             this.lbPessoaJIe.Name = "lbPessoaJIe";
             this.lbPessoaJIe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJIe.Size = new System.Drawing.Size(20, 13);
@@ -236,7 +236,7 @@ namespace Forms
             // 
             // txPessoaJIe
             // 
-            this.txPessoaJIe.Location = new System.Drawing.Point(139, 134);
+            this.txPessoaJIe.Location = new System.Drawing.Point(125, 140);
             this.txPessoaJIe.Name = "txPessoaJIe";
             this.txPessoaJIe.Size = new System.Drawing.Size(211, 20);
             this.txPessoaJIe.TabIndex = 62;
@@ -244,7 +244,7 @@ namespace Forms
             // lbPessoaJDataNascimento
             // 
             this.lbPessoaJDataNascimento.AutoSize = true;
-            this.lbPessoaJDataNascimento.Location = new System.Drawing.Point(26, 111);
+            this.lbPessoaJDataNascimento.Location = new System.Drawing.Point(12, 117);
             this.lbPessoaJDataNascimento.Name = "lbPessoaJDataNascimento";
             this.lbPessoaJDataNascimento.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJDataNascimento.Size = new System.Drawing.Size(107, 13);
@@ -266,7 +266,7 @@ namespace Forms
             // lbPessoaJNome
             // 
             this.lbPessoaJNome.AutoSize = true;
-            this.lbPessoaJNome.Location = new System.Drawing.Point(26, 85);
+            this.lbPessoaJNome.Location = new System.Drawing.Point(12, 91);
             this.lbPessoaJNome.Name = "lbPessoaJNome";
             this.lbPessoaJNome.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbPessoaJNome.Size = new System.Drawing.Size(38, 13);
@@ -276,7 +276,7 @@ namespace Forms
             // 
             // txPessoaJNome
             // 
-            this.txPessoaJNome.Location = new System.Drawing.Point(139, 82);
+            this.txPessoaJNome.Location = new System.Drawing.Point(125, 88);
             this.txPessoaJNome.Name = "txPessoaJNome";
             this.txPessoaJNome.Size = new System.Drawing.Size(211, 20);
             this.txPessoaJNome.TabIndex = 58;
@@ -296,9 +296,9 @@ namespace Forms
             this.Complemento,
             this.Deletar,
             this.Editar});
-            this.dgPessoaJLista.Location = new System.Drawing.Point(356, 82);
+            this.dgPessoaJLista.Location = new System.Drawing.Point(-3, 250);
             this.dgPessoaJLista.Name = "dgPessoaJLista";
-            this.dgPessoaJLista.Size = new System.Drawing.Size(418, 275);
+            this.dgPessoaJLista.Size = new System.Drawing.Size(804, 199);
             this.dgPessoaJLista.TabIndex = 82;
             this.dgPessoaJLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPessoaJLista_CellContentClick);
             // 

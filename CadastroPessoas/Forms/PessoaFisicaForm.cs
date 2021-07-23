@@ -106,5 +106,10 @@ namespace Forms
             this.txPessoaFNumero.Text = pessoaF.Endereco.Numero.ToString();
             this.txPessoaFComplemento.Text = pessoaF.Endereco.Complemento;
         }
+
+        private void btPessoaFVoltar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -12,11 +12,12 @@ namespace Forms
 {
     public partial class Form1 : Form
     {
-        PessoaFisicaForm pessoaF = new PessoaFisicaForm();
-        PessoaJuridicaForm pessoaJ = new PessoaJuridicaForm();
+        PessoaFisicaForm PessoaFisica = new PessoaFisicaForm();
+        PessoaJuridicaForm PessoaJuridica = new PessoaJuridicaForm();
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,19 +27,17 @@ namespace Forms
 
         private void btPessoaF_Click(object sender, EventArgs e)
         {
-            PessoaFisicaForm PessoaFisica = new PessoaFisicaForm();
-            pessoaF.Show();
+            PessoaFisica.Show();
         }
 
         private void btPessoaJ_Click(object sender, EventArgs e)
         {
-            PessoaJuridicaForm PessoaJuridica = new PessoaJuridicaForm();
-            pessoaJ.Show();
+            PessoaJuridica.Show();
         }
 
         private void btSair_Click(object sender, EventArgs e)
         {
-           
+            Close();
         }
     }
 }

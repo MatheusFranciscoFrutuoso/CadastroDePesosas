@@ -46,7 +46,8 @@ namespace Forms
                 this.PessoaJuridica[indexDadoProcurado] = pessoaJ;
                 MessageBox.Show("Editado com sucesso");
             }
-           
+            CarregarLista();
+            LimparCampos();
         }
 
         private void btPessoaJLimpar_Click(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace Forms
         private void LimparCampos()
         {
             txPessoaJNome.Text = String.Empty;
-            //dtPessoaJDataNascimento.Text = String.Empty;
+            dtPessoaJDataNascimento.Text = String.Empty;
             txPessoaJIe.Text = String.Empty;
             txPessoaJCnpj.Text = String.Empty;
             txPessoaJCidade.Text = String.Empty;
@@ -112,7 +113,7 @@ namespace Forms
 
         private void btPessoaJVoltar_Click(object sender, EventArgs e)
         {
-            
+            Close();
         }
     }
  }

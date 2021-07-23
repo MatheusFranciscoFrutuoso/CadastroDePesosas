@@ -32,12 +32,13 @@ namespace Forms
 
         private void btPessoaJ_Click(object sender, EventArgs e)
         {
+            PessoaJuridicaForm PessoaJuridica = new PessoaJuridicaForm();
             pessoaJ.Show();
         }
 
         private void btSair_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

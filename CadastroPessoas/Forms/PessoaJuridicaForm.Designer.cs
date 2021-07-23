@@ -53,8 +53,6 @@ namespace Forms
             this.lbPessoaJNome = new System.Windows.Forms.Label();
             this.txPessoaJNome = new System.Windows.Forms.TextBox();
             this.dgPessoaJLista = new System.Windows.Forms.DataGridView();
-            this.btPessoaJEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btPessoaJDeletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +62,8 @@ namespace Forms
             this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Número = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgPessoaJLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +82,7 @@ namespace Forms
             this.btPessoaJLimpar.TabIndex = 80;
             this.btPessoaJLimpar.Text = "Limpar";
             this.btPessoaJLimpar.UseVisualStyleBackColor = true;
-            this.btPessoaJLimpar.Click += new System.EventHandler(this.btPessoaJLimpar_Click);
+            this.btPessoaJLimpar.Click += new System.EventHandler(this.btPessoaJLimpar_Click_1);
             // 
             // btPessoaJVoltar
             // 
@@ -92,6 +92,7 @@ namespace Forms
             this.btPessoaJVoltar.TabIndex = 79;
             this.btPessoaJVoltar.Text = "Voltar";
             this.btPessoaJVoltar.UseVisualStyleBackColor = true;
+            this.btPessoaJVoltar.Click += new System.EventHandler(this.btPessoaJVoltar_Click);
             // 
             // btPessoaJSalvar
             // 
@@ -284,8 +285,6 @@ namespace Forms
             // 
             this.dgPessoaJLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPessoaJLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btPessoaJEditar,
-            this.btPessoaJDeletar,
             this.Nome,
             this.DataNascimento,
             this.IE,
@@ -294,24 +293,14 @@ namespace Forms
             this.Bairro,
             this.Rua,
             this.Número,
-            this.Complemento});
+            this.Complemento,
+            this.Deletar,
+            this.Editar});
             this.dgPessoaJLista.Location = new System.Drawing.Point(356, 82);
             this.dgPessoaJLista.Name = "dgPessoaJLista";
             this.dgPessoaJLista.Size = new System.Drawing.Size(418, 275);
             this.dgPessoaJLista.TabIndex = 82;
             this.dgPessoaJLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPessoaJLista_CellContentClick);
-            // 
-            // btPessoaJEditar
-            // 
-            this.btPessoaJEditar.HeaderText = "";
-            this.btPessoaJEditar.Name = "btPessoaJEditar";
-            this.btPessoaJEditar.Width = 45;
-            // 
-            // btPessoaJDeletar
-            // 
-            this.btPessoaJDeletar.HeaderText = "";
-            this.btPessoaJDeletar.Name = "btPessoaJDeletar";
-            this.btPessoaJDeletar.Width = 45;
             // 
             // Nome
             // 
@@ -357,6 +346,20 @@ namespace Forms
             // 
             this.Complemento.HeaderText = "Complemento";
             this.Complemento.Name = "Complemento";
+            // 
+            // Deletar
+            // 
+            this.Deletar.HeaderText = "Deletar";
+            this.Deletar.Name = "Deletar";
+            this.Deletar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Deletar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // PessoaJuridicaForm
             // 
@@ -421,8 +424,6 @@ namespace Forms
         private System.Windows.Forms.Label lbPessoaJNome;
         private System.Windows.Forms.TextBox txPessoaJNome;
         private System.Windows.Forms.DataGridView dgPessoaJLista;
-        private System.Windows.Forms.DataGridViewButtonColumn btPessoaJEditar;
-        private System.Windows.Forms.DataGridViewButtonColumn btPessoaJDeletar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataNascimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn IE;
@@ -432,5 +433,7 @@ namespace Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Rua;
         private System.Windows.Forms.DataGridViewTextBoxColumn Número;
         private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
+        private System.Windows.Forms.DataGridViewButtonColumn Deletar;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

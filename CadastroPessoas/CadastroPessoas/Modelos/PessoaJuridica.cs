@@ -21,7 +21,7 @@ namespace CadastroPessoas.Modelos
         }
         public PessoaJuridica()
         {
-
+            this.Enderecoo = new Endereco();
         }
         public override string ToString()
         {
